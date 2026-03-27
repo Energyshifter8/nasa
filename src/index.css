@@ -1,0 +1,260 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --orange: #FF4D00;
+  --purple: #6B3FDB;
+  --purple-light: #9747FF;
+  --purple-dark: #2D1B4E;
+  --white: #FFFFFF;
+  --muted: #A1A1AA;
+  --black: #000000;
+  --bg-dark: #06020D;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Barlow', sans-serif;
+  background-color: var(--black);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+.font-condensed {
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+/* =====================
+   TYPOGRAPHY
+   ===================== */
+.display-heading {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  color: var(--white);
+}
+
+.section-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+/* =====================
+   BUTTONS (PILL STYLE)
+   ===================== */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border-radius: 9999px;
+  background: var(--purple);
+  color: white;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: var(--purple-light);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: 9999px;
+  background: transparent;
+  color: white;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 2px solid rgba(255,255,255,0.3);
+  cursor: pointer;
+  transition: border-color 0.25s, background 0.25s;
+}
+
+.btn-outline:hover {
+  border-color: var(--purple-light);
+  background: rgba(107,63,219,0.15);
+}
+
+.btn-orange {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: 9999px;
+  background: var(--orange);
+  color: white;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.btn-orange:hover {
+  background: #e03d00;
+  transform: translateY(-1px);
+}
+
+/* =====================
+   SCROLLBAR
+   ===================== */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 2px; }
+
+/* =====================
+   SECTION HERO OVERLAY
+   ===================== */
+.hero-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(6, 2, 13, 0.3) 0%,
+    rgba(6, 2, 13, 0.0) 30%,
+    rgba(45, 27, 78, 0.5) 80%,
+    rgba(6, 2, 13, 0.95) 100%
+  );
+}
+
+.section-overlay {
+  background: linear-gradient(
+    90deg,
+    rgba(6, 2, 13, 0.9) 0%,
+    rgba(6, 2, 13, 0.6) 50%,
+    rgba(6, 2, 13, 0.0) 100%
+  );
+}
+
+/* =====================
+  TAG / CHIP
+  ===================== */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.chip-purple {
+  background: var(--purple);
+  color: white;
+}
+
+.chip-orange {
+  background: var(--orange);
+  color: white;
+}
+
+.chip-ghost {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.7);
+}
+
+/* =====================
+   CARD STYLES
+   ===================== */
+.card-dark {
+  background: #0D0D0D;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px;
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+.card-dark:hover {
+  border-color: rgba(107,63,219,0.4);
+  transform: translateY(-3px);
+}
+
+.card-purple {
+  background: var(--purple);
+  border-radius: 12px;
+}
+
+/* =====================
+   DIVIDER LINE
+   ===================== */
+.divider {
+  height: 1px;
+  background: rgba(255,255,255,0.06);
+}
+
+/* =====================
+   CANVAS
+   ===================== */
+.canvas-container {
+  position: absolute;
+  inset: 0;
+}
+
+/* =====================
+   FLOAT ANIMATION
+   ===================== */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.floating { animation: float 4s ease-in-out infinite; }
+
+/* Marquee ticker */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 20s linear infinite;
+}
+
+/* Accordion transition */
+.accordion-content {
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+/* Hover image zoom */
+.img-zoom {
+  transition: transform 0.4s ease;
+}
+
+.img-zoom:hover {
+  transform: scale(1.04);
+}
