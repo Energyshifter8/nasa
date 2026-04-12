@@ -97,7 +97,7 @@ export default function Curriculum() {
             </h2>
           </div>
           <p className="text-white/50 max-w-xs font-condensed text-lg">
-            9.5 долоо хоногийн ширүүн сургалт. Click хийгээд агуулгыг харна уу.
+            Эрчимжүүлсэн сургалтын хөтөлбөр. Click here 👇.
           </p>
         </motion.div>
 
