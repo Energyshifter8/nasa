@@ -4,7 +4,7 @@ import { motion, AnimatePresence, useInView } from 'framer-motion';
 const modules = [
   {
     id: 1,
-    icon: '⚛️',
+    icon: '',
     title: 'React Үндэс',
     duration: '2 долоо хоног',
     weeks: 2,
@@ -18,7 +18,7 @@ const modules = [
   },
   {
     id: 2,
-    icon: '🔗',
+    icon: '',
     title: 'Advanced Hooks',
     duration: '2 долоо хоног',
     weeks: 2,
@@ -32,7 +32,7 @@ const modules = [
   },
   {
     id: 3,
-    icon: '🔷',
+    icon: '',
     title: 'TypeScript интеграц',
     duration: '1.5 долоо хоног',
     weeks: 1.5,
@@ -46,7 +46,7 @@ const modules = [
   },
   {
     id: 4,
-    icon: '🎨',
+    icon: '',
     title: 'Tailwind CSS',
     duration: '1 долоо хоног',
     weeks: 1,
@@ -60,7 +60,7 @@ const modules = [
   },
   {
     id: 5,
-    icon: '🌐',
+    icon: '',
     title: '3D вэб: React Three Fiber',
     duration: '3 долоо хоног',
     weeks: 3,
