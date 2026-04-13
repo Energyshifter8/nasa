@@ -1,30 +1,47 @@
-import { Suspense, lazy } from 'react';
+import { Suspense, lazy, useState } from 'react';
 import { motion } from 'framer-motion';
 
 const HeroScene = lazy(() => import('./HeroScene'));
 
 function NavBar() {
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const query = e.target.value.toLowerCase();
+    setSearchQuery(query);
+    
+    // Auto-scroll to relevant section
+    if (query.includes('curriculum') || query.includes('модуль')) {
+      document.getElementById('curriculum')?.scrollIntoView({ behavior: 'smooth' });
+    } else if (query.includes('mentor') || query.includes('ментор')) {
+      document.getElementById('mentor')?.scrollIntoView({ behavior: 'smooth' });
+    } else if (query.includes('register') || query.includes('бүртгүүлэх')) {
+      document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-50 px-8 py-0"
       style={{ background: 'rgba(0,0,0,0.7)', backdropFilter: 'blur(12px)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}
     >
-      <div className="max-w-screen-2xl mx-auto flex items-center justify-between h-16">
+      <div className="max-w-screen-2xl mx-auto flex items-center justify-between h-16 gap-6">
         {/* Logo */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 flex-shrink-0">
           <div
             className="w-10 h-10 rounded-lg flex items-center justify-center text-lg font-black"
             style={{ background: 'linear-gradient(135deg, #6B3FDB, #FF4D00)' }}
           >
             ⚛
           </div>
-          <span className="font-condensed font-black text-lg tracking-widest uppercase text-white">
+          <span className="font-condensed font-black text-lg tracking-widest uppercase text-white hidden sm:inline">
             React 3D Academy
           </span>
         </div>
 
         {/* Center nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-8 flex-1">
           {[
             { label: 'Яагаад?', href: '#features' },
             { label: 'Хөтөлбөр', href: '#curriculum' },
@@ -42,8 +59,36 @@ function NavBar() {
           ))}
         </div>
 
+        {/* Search Bar */}
+        <motion.div
+          className="relative flex-1 max-w-xs hidden md:block"
+          animate={{ width: searchOpen ? '100%' : 'auto' }}
+        >
+          <div
+            className="relative flex items-center"
+            style={{
+              background: searchOpen ? 'rgba(255,255,255,0.08)' : 'transparent',
+              border: searchOpen ? '1px solid var(--purple)' : '1px solid rgba(255,255,255,0.2)',
+              borderRadius: '8px',
+              padding: '6px 12px',
+              transition: 'all 0.3s ease'
+            }}
+          >
+            <input
+              type="text"
+              placeholder="Хайх..."
+              value={searchQuery}
+              onChange={handleSearch}
+              onFocus={() => setSearchOpen(true)}
+              onBlur={() => setSearchOpen(false)}
+              className="bg-transparent text-white placeholder:text-white/40 outline-none text-sm w-full font-condensed"
+            />
+            <span className="text-white/50 ml-2">🔍</span>
+          </div>
+        </motion.div>
+
         {/* CTA */}
-        <a href="#register">
+        <a href="#register" className="flex-shrink-0">
           <button className="btn-orange text-xs">
             Бүртгүүлэх
           </button>

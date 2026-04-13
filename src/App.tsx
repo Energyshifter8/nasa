@@ -5,6 +5,7 @@ import Curriculum from './components/Curriculum';
 import ThreeDemo from './components/ThreeDemo';
 import Mentor from './components/Mentor';
 import Testimonials from './components/Testimonials';
+import Pricing from './components/Pricing';
 import Register from './components/Register';
 import Footer from './components/Footer';
 
@@ -25,6 +26,9 @@ export default function App() {
         <Mentor />
       </div>
       <Testimonials />
+      <div id="pricing">
+        <Pricing />
+      </div>
       <Register />
       <Footer />
     </div>
