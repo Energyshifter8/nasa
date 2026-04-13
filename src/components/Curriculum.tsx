@@ -155,20 +155,10 @@ export default function Curriculum() {
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="section-label mb-6 text-purple-300"
-          >
-            — Сургалтын хөтөлбөр
-          </motion.div>
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="display-heading text-7xl md:text-8xl mb-8"
-          >
-            Модуль &<br />
+            Агуулга &<br />
             <span
               className="bg-gradient-to-r from-purple-400 via-pink-500 to-orange-400 bg-clip-text text-transparent"
             >
-              Агуулга
             </span>
           </motion.h2>
           <motion.p
