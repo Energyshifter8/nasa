@@ -1,3 +1,4 @@
+import React from "react";
 import { useState, useRef, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 
